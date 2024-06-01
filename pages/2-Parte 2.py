@@ -46,7 +46,7 @@ st.image('./images/kmeans.png', width=400,caption='Kmeans')
 rd_2='''Al momento de comparar las etiquetas asignadas para cada dato, se obtiene que estás coinciden con el estado aproximadamente un 95% de las veces, habiendo en la categoría 0 124 muestras exclusivamente de Nuevo México, mientras que en la categoría 1 hay 85 registros de Arizona y 11 de Nuevo México. Luego, se creó un árbol de decisión para poder predecir la categoría asignada por el algoritmo de Kmeans.
     '''
 st.markdown(f'<div style="text-align: justify">{rd_2}</div>',unsafe_allow_html=True)
-st.image('./images/desitionTree.png', width=500,caption='Arbol de decisión')
+st.image('./images/desitiontree.png', width=500,caption='Arbol de decisión')
 rd_3='''
 Observemos que en los primeros nodos del diagrama anterior observamos variables climatológicas. Ante esto, se piensa que los clusters son generados por la diferencia de esas variables. Por otro lado, para el segundo subconjunto de datos se obtuvo el siguiente mapeo de reducción de dimensionalidad:
 '''
@@ -73,13 +73,13 @@ Podemos observar que ambos estados se pueden diferenciar bien, siendo los datos 
 En cuanto a la altitud, se obtuvo la siguiente gráfica:
 '''
 st.markdown(f'<div style="text-align: justify">{CE2}</div>',unsafe_allow_html=True)
-st.image('./images/Altitud-pp.png', width=500,caption='Altitud y precipitación')
+st.image('./images/Altitud-PP.png', width=500,caption='Altitud y precipitación')
 CE3='''
 en la cual también podemos apreciar diferencias entre ambos estados. Así, se puede pensar que ambos estados se pueden distinguir bien basándonos en estas tres variables climatológicas. Para tener más evidencia, se realizaron pruebas de permutación. En nuestras pruebas, y tomando el estadístico de la media muestral, nuestra hipótesis nula fue que la media de estas tres variables entre estados eran iguales con un nivel de significancia de = 0.05, y la hipótesis alternativa fué que la media era menor o mayor, dependiendo del signo de la diferencia de medias de la variable. 
 Utilizando 100 remuestreos en la prueba, se obtuvieron los siguientes resultados:
 '''
 st.markdown(f'<div style="text-align: justify">{CE3}</div>',unsafe_allow_html=True)
-st.image('./images/Permutacion.png', width=500,caption='Pruebas de permutación')
+st.image('./images/permutacion.png', width=500,caption='Pruebas de permutación')
 CE4='''
 Debido a que los tres p-valores fueron menores a , se tiene evidencia para rechazar la hipótesis nula, y aceptar la hipótesis alternativa en cada caso. Finalmente, se calculó la media de los índices de diversidad, y se consiguió lo siguiente:
 '''
@@ -112,7 +112,7 @@ st.image('./images/subconjunto-total.png', width=500,caption='Subconjunto de dat
 st.markdown('<div style="text-align: center"><b>Datos de Arizona</b></div>',unsafe_allow_html=True)
 st.image('./images/subconjunto-arizona.png', width=500,caption='Subconjunto de datos de Arizona')
 st.markdown('<div style="text-align: center"><b>Datos de Arizona después de las 13:00</b></div>',unsafe_allow_html=True)
-st.image('./images/subconjunto-AZ-13.png', width=500,caption='Subconjunto de datos de Arizona después de las 13:00h')
+st.image('./images/subconjunto-az-13.png', width=500,caption='Subconjunto de datos de Arizona después de las 13:00h')
 D2='''El grupo funcional donde se obtuvieron p-valores más significativos (tomando un = 0.05) fue Temperatura baja y alta precipitación (tbap). En las tres regresiones mostradas, resulta interesante el hecho de que a la variable tmedia17 (temperatura media) se le asigna un coeficiente negativo.'''
 st.markdown(f'<div style="text-align: justify">{D2}</div>',unsafe_allow_html=True)
 
@@ -159,5 +159,3 @@ glm3= '''
 Al iterativamente eliminar las variables con los mayores p-valores y ajustar modelos sucesivamente más simples, llegamos a modelos univariados que relacionan el número de alimentos con una sola variable. Al construir un modelo que incluye únicamente la temperatura media, encontramos que esta variable es estadísticamente significativa dentro del modelo. Además, observamos un efecto positivo: a medida que aumenta la temperatura media, aumenta el número de alimentos distintos. Este resultado sugiere una relación significativa y directa entre la temperatura y la diversidad de alimentos en el estudio, lo que resalta la importancia de la temperatura como factor influyente en la variabilidad de la disponibilidad de alimentos.
 '''
 st.markdown(f'<div style="text-align: justify">{glm3}</div>',unsafe_allow_html=True)
-
-
